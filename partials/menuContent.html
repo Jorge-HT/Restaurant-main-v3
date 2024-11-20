@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div class="topnav">
+            <a class="active" href="#menu">Menu</a>
+            <a href="#plateprog">Plate Progress</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <div class="search-container">
+                <form action="function.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit">Find</button>
+                </form>
+            </div>
+        </div>
+
+        <div style="padding-left:16px"></div>
+        <h1>Los Pollos Hermanos Menu</h1><br>
+
+        <!-- Drinks Section -->
+        <div class="menu2">
+            <h1>Drinks!</h1>
+            <div class="menu-item">
+                <p>
+                    - Small ($1.39) <button onclick="addToPlate('Small Drink ($1.39)')">Add to Plate</button><br>
+                    - Medium ($1.79) <button onclick="addToPlate('Medium Drink ($1.79)')">Add to Plate</button><br>
+                    - Large ($1.99) <button onclick="addToPlate('Large Drink ($1.99)')">Add to Plate</button><br>
+                    - Coca Cola <button onclick="addToPlate('Coca Cola')">Add to Plate</button><br>
+                    - Dr. Pepper <button onclick="addToPlate('Dr. Pepper')">Add to Plate</button><br>
+                    - Diet Coke <button onclick="addToPlate('Diet Coke')">Add to Plate</button><br>
+                    - Barq's Root Beer <button onclick="addToPlate('Barq\'s Root Beer')">Add to Plate</button><br>
+                    - Sprite <button onclick="addToPlate('Sprite')">Add to Plate</button>
+                </p>
+            </div>
+        </div>
+
+        <!-- Breakfast Specialties Section -->
+        <h2>Breakfast Specialties</h2>
+        <div class="menu-item">
+            <div class="imgside">
+                <img src="../images/bf1.jpeg" alt="Huevos Rancheros" style="width:200px; height:auto;">
+            </div>
+            <div class="imgtext">
+                <p>
+                    "Huevos Rancheros" ($5.49) 
+                    <button onclick="addToPlate('Huevos Rancheros ($5.49)')">Add to Plate</button><br>
+                    - Pan fried potatoes<br>
+                    - Flour tortilla<br>
+                    - Cheese<br>
+                    - Pinto beans<br>
+                    - Chile<br>
+                    - Two eggs
+                </p>
+            </div>
+        </div>
+
+        <!-- Desserts Section -->
+        <div class="menu2">
+            <h1>Desserts</h1>
+            <div class="menu-item">
+                <p>
+                    - Apple Bites ($1.09) <button onclick="addToPlate('Apple Bites ($1.09)')">Add to Plate</button><br>
+                    - Churros ($1.39) <button onclick="addToPlate('Churros ($1.39)')">Add to Plate</button><br>
+                    - Ice Cream cone ($2.45) <button onclick="addToPlate('Ice Cream Cone ($2.45)')">Add to Plate</button><br>
+                    - Chocolate Shake ($1.65) <button onclick="addToPlate('Chocolate Shake ($1.65)')">Add to Plate</button>
+                </p>
+            </div>
+        </div>
+
+        <!-- Platters Section -->
+        <h2>Platters</h2>
+        <div class="menu-item">
+            <div class="imgside">
+                <img src="../images/enchilada.jpeg" alt="Enchiladas" style="width:250px; height:auto;">
+            </div>
+            <div class="imgtext">
+                <p>
+                    "Enchiladas" ($5.99) 
+                    <button onclick="addToPlate('Enchiladas ($5.99)')">Add to Plate</button><br>
+                    - Beef<br>
+                    - Sour cream<br>
+                    - Corn tortilla<br>
+                    - Cheese<br>
+                    - Black beans<br>
+                    - Spinach<br>
+                    - Jalapeno pepper
+                </p>
+            </div>
+        </div>
+
+        <div class="menu2">
+            <div class="menu-item">
+                <div class="imgside">
+                    <img src="../images/birriaburro.jpeg" alt="Birria Burrito" style="width:270px; height:225px;">
+                </div>
+                <div class="imgtext">
+                    <p>
+                        "Birria Burrito" ($5.99) 
+                        <button onclick="addToPlate('Birria Burrito ($5.99)')">Add to Plate</button><br>
+                        - Birria<br>
+                        - Cilantro<br>
+                        - Flour tortilla<br>
+                        - Onions<br>
+                        - Chile<br>
+                        - Rice<br>
+                        - Beans
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="imgside">
+                <img src="../images/burritoplatter.jpg" alt="Burrito Platter" style="width:250px; height:250px;">
+            </div>
+            <div class="imgtext">
+                <p>
+                    "Burrito Platter" ($5.99)
+                    <button onclick="addToPlate('Burrito Platter ($5.99)')">Add to Plate</button><br>
+                    - Chile<br>
+                    - Black beans<br>
+                    - Steak<br>
+                    - Lettuce<br>
+                    - Cheese sauce<br>
+                    - Rice<br>
+                    - Salsa<br>
+                    - Green onions<br>
+                    - Flour tortilla
+                </p>
+            </div>
+        </div>
+
+        <div class="menu2">
+            <div class="menu-item">
+                <div class="imgside">
+                    <img src="../images/birria.jpeg" alt="Birria Tacos" style="width:270px; height:225px;">
+                </div>
+                <div class="imgtext">
+                    <p>
+                        "Birria Tacos" ($5.99) 
+                        <button onclick="addToPlate('Birria Tacos ($5.99)')">Add to Plate</button><br>
+                        - Birria<br>
+                        - Cilantro<br>
+                        - Corn tortilla<br>
+                        - Onions<br>
+                        - Chile
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="imgside">
+                <img src="../images/IndianTaco.jpeg" alt="Indian Taco" style="width:250px; height:auto;">
+            </div>
+            <div class="imgtext">
+                <p>
+                    "Indian Taco Platter" ($5.69)
+                    <button onclick="addToPlate('Indian Taco Platter ($5.69)')">Add to Plate</button><br>
+                    - Indian fry bread<br>
+                    - Beef<br>
+                    - Green chile<br>
+                    - Lettuce<br>
+                    - Cheese<br>
+                    - Tomato<br>
+                    - Salsa
+                </p>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="imgside">
+                <img src="../images/tacosalad.webp" alt="Taco Salad" style="width:300px; height:250px;">
+            </div>
+            <div class="imgtext">
+                <p>
+                    "Taco Salad Platter" ($5.69)
+                    <button onclick="addToPlate('Taco Salad Platter ($5.69)')">Add to Plate</button><br>
+                    - Flour tortilla<br>
+                    - Beef<br>
+                    - Green chile<br>
+                    - Lettuce<br>
+                    - Cheese<br>
+                    - Tomato<br>
+                    - Salsa<br>
+                    - Beans<br>
+                    - Sour cream<br>
+                    - Guacamole
+                </p>
+            </div>
+        </div>
+
+        <!-- Plate Progress Section -->
+        <h2 id="plateprog">Plate Progress</h2>
+        <div id="plate-progress">
+            <p>No items on the plate yet.</p>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="js/plateProgress.js" defer></script> <!-- External JS for handling plate progress -->
+    </body>
+</html>

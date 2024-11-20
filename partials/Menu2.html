@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Los Pollos Hermanos Menu</title>
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="#menu">Menu</a>
+            <a href="#plateprog">Plate Progress</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <div class="search-container">
+                <form action="function.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit">Find</button>
+                </form>
+            </div>
+        </div>
+
+        <div style="padding-left:16px"></div>
+        <h1>Los Pollos Hermanos Menu</h1><br>
+
+        <!-- Kiddie Drinks Section -->
+        <div class="menu2">
+            <h1>Kiddie Drinks!</h1>
+            <div class="menu-item">
+                <p>
+                    - Kiddie ($1.00) <button onclick="addToPlate('Kiddie Drink ($1.00)')">Add to Plate</button><br>
+                    - Coca Cola <button onclick="addToPlate('Coca Cola')">Add to Plate</button><br>
+                    - Dr. Pepper <button onclick="addToPlate('Dr. Pepper')">Add to Plate</button><br>
+                    - Diet Coke <button onclick="addToPlate('Diet Coke')">Add to Plate</button><br>
+                    - Barq's Root Beer <button onclick="addToPlate('Barq\'s Root Beer')">Add to Plate</button><br>
+                    - Sprite <button onclick="addToPlate('Sprite')">Add to Plate</button>
+                </p>
+            </div>
+        </div>
+
+        <!-- Kiddie Lunch Section -->
+        <h2>Kiddie Lunch</h2>
+        <div class="menu-item">
+            <div class="imgside">
+                <img src="images/kids1.jpeg" alt="Chicken Tendies & Fries" style="width:200px; height: 200px;">
+            </div>
+            <div class="imgtext">
+                <p>
+                    "Chicken Tenders & Fries" ($4.99) <button onclick="addToPlate('Chicken Tenders & Fries ($4.99)')">Add to Plate</button><br>
+                    - chicken tenders (breaded)<br>
+                    - potato fries
+                </p>
+            </div>
+        </div>
+
+        <!-- Pizza & Apple Slices Section -->
+        <div class="menu2">
+            <div class="menu-item">
+                <div class="imgside">
+                    <img src="images/pizza.jpeg" alt="Pizza & Apple Slices" style="width:250px; height: 200px;">
+                </div>
+                <div class="imgtext">
+                    <p>
+                        "Pizza & Apple Slices" ($4.99) <button onclick="addToPlate('Pizza & Apple Slices ($4.99)')">Add to Plate</button><br>
+                        - pepperoni<br>
+                        - apples<br>
+                        - cheese<br>
+                        - tomato sauce
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plate Progress Section -->
+        <h2 id="plateprog">Plate Progress</h2>
+        <div id="plate-progress">
+            <p>No items on the plate yet.</p> <!-- Initial plate state -->
+        </div>
+
+        <!-- JavaScript -->
+        <script>
+            function addToPlate(item) {
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "php/addToPlate.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        // Update the plate progress display with the response
+                        document.getElementById('plate-progress').innerHTML = xhr.responseText;
+                    } else {
+                        alert("Failed to add item to plate.");
+                    }
+                };
+                xhr.send("item=" + encodeURIComponent(item));
+            }
+        </script>
+    </body>
+</html>

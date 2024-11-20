@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Los Pollos Hermanos Menu</title>
+    </head>
+    <body>
+        <!-- Include header -->
+        <div id="header-placeholder"></div>
+        
+        <!-- Main content -->
+        <div id="menu-placeholder"></div>
+        
+        <!-- Button to switch between MenuContent and Menu2 -->
+        <button id="menu-toggle-btn" onclick="toggleMenu()">Switch to Kiddie Menu</button>
+        
+        <!-- Plate Progress -->
+        <div id="plateprog" style="padding: 0px; margin-top: 20px; background-color: #000000; border-top: 2px solid #000000;">
+            <h1>When is my food ready?</h1>
+            <div id="myBar" style="width: 0%; height: 30px; background-color: green;"></div>
+            <button onclick="move()">Show Progress</button>
+        </div>
+
+        <!-- Checkout Button -->
+        <div id="checkout-section" style="margin-top: 20px;">
+            <button id="checkout-button" onclick="window.location.href='php/checkout.php'">Checkout</button>
+            <p id="checkout-message" style="color: red; display: none;">You need to add at least one item to your plate before checking out.</p>
+        </div>
+
+
+        <!-- About Us -->
+        <div id="about-placeholder"></div>
+
+        <!-- Contact -->
+        <div id="contact-placeholder"></div>
+
+        <!-- External scripts -->
+        <script src="js/progressBar.js" defer></script>
+        <script src="js/googleTranslate.js" defer></script>
+        
+        <!-- Dynamically load partials -->
+        <script>
+            function loadComponent(id, file) {
+                fetch(file)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to load ${file}`);
+                        }
+                        return response.text();
+                    })
+                    .then(html => {
+                        document.getElementById(id).innerHTML = html;
+                    })
+                    .catch(err => {
+                        console.warn('Could not load file:', file, err);
+                    });
+            }
+
+            // Initially load MenuContent and other sections
+            loadComponent("menu-placeholder", "partials/menuContent.html");
+            loadComponent("plate-progress-placeholder", "partials/plateProgress.html");
+            loadComponent("about-placeholder", "partials/about.html");
+            loadComponent("contact-placeholder", "partials/contact.html");
+
+            // Flag to toggle between menus
+            let isMenu2 = false;
+
+            // Function to toggle between MenuContent and Menu2
+            function toggleMenu() {
+                const button = document.getElementById("menu-toggle-btn");
+                if (isMenu2) {
+                    loadComponent("menu-placeholder", "partials/menuContent.html");
+                    isMenu2 = false;
+                    button.innerText = "Switch to Kiddie Menu";
+                } else {
+                    loadComponent("menu-placeholder", "partials/Menu2.html");
+                    isMenu2 = true;
+                    button.innerText = "Switch to Regular Menu";
+                }
+            }
+
+            // Function to handle adding items to the plate
+            function addToPlate(item) {
+                fetch('php/addToPlate.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ item: item })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Update the plate section with the new plate contents
+                    document.getElementById("plate-progress").innerHTML = data.updatedPlate;
+                })
+                .catch(error => console.error('Error adding to plate:', error));
+            }
+
+            // Function to check if the user has added any items to their plate
+            function checkOut() {
+                fetch('php/checkPlate.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.itemsCount > 0) {
+                            // If there are items, redirect to checkout page
+                            window.location.href = 'checkout.php';
+                        } else {
+                            // If no items, show a message
+                            document.getElementById("checkout-message").style.display = 'block';
+                        }
+                    })
+                    .catch(error => console.error('Error checking plate:', error));
+            }
+        </script>
+    </body>
+</html>
