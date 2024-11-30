@@ -6,10 +6,11 @@
             <a href="#plateprog">Plate Progress</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
-            <div class="search-container">
-                <form action="function.php">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit">Find</button>
+            <!-- Search form -->
+            <div id="search-section">
+                <form action="php/search.php" method="GET">
+                    <input type="text" name="search" placeholder="Search menu..." required>
+                    <button type="submit">Search</button>
                 </form>
             </div>
         </div>
@@ -193,7 +194,7 @@
         <!-- Plate Progress Section -->
         <h2 id="plateprog">Plate Progress</h2>
         <div id="plate-progress">
-            <p>No items on the plate yet.</p>
+            <p>Add Item to view Plate.</p>
         </div>
 
         <!-- JavaScript -->
