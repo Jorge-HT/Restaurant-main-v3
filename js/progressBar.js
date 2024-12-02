@@ -1,18 +1,20 @@
 // Handles the progress bar for plate progress
-let i = 0;
+var i = 0;
 function move() {
     if (i == 0) {
         i = 1;
-        const elem = document.getElementById("myBar");
-        let width = 1;
-        const id = setInterval(frame, 10);
+        var elem = document.getElementById("myBar");
+        var width = 1;
+        var totalTime = 1500; //total time in seconds (25 minutes)
+        var interval = (totalTime * 100) / 100; //1500ms per step (this would fill it in 25 minutes)
+        var id = setInterval(frame, interval);
         function frame() {
             if (width >= 100) {
                 clearInterval(id);
                 i = 0;
             } else {
                 width++;
-                elem.style.width = width + "%";  // Update width
+                elem.style.width = width + "%"; //update width by 1%
             }
         }
     }

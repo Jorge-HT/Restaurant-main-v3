@@ -133,3 +133,8 @@ body{
         background: linear-gradient(90deg, rgb(35, 35, 34), #605f5f);
         background-color: #000000; 
     }
+
+
+img[src="https://www.google.com/images/cleardot.gif"] {
+  display: none;
+}
