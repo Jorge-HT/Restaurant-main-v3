@@ -79,7 +79,7 @@
             ['name' => 'Kiddie Spaghetti & Broccoli ($6.59)', 'description' => 'beef, noodles, tomato sauce, cheese, broccoli', 'image' => 'sphagetbroc.jpeg'],
             ['name' => 'Kiddie Grilled Cheese ($3.99)', 'description' => 'bread, cheese', 'image' => 'grillC.jpeg'],
             ['name' => 'Kiddie Dino Nuggets ($2.99)', 'description' => 'breaded chicken nuggets', 'image' => 'dino.jpeg'],
-            ['name' => 'Kiddie Coca Cola ($1.00)', 'description' => 'small sized soda'],
+            ['name' => 'Kiddie Coca Cola ($1.00)', 'description' => 'small sized soda', 'image' => 'smallsizesoda.jpeg'],
             ['name' => 'Kiddie Diet Coke ($1.00)', 'description' => 'small sized soda'],
             ['name' => 'Kiddie Dr. Pepper ($1.00)', 'description' => 'small sized soda'],
             ['name' => 'Kiddie Barqs Root Beer ($1.00)', 'description' => 'small sized soda'],
