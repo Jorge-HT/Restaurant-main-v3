@@ -82,7 +82,7 @@
             ['name' => 'Kiddie Coca Cola ($1.00)', 'description' => 'small sized soda', 'image' => 'smallsizesoda.jpeg'],
             ['name' => 'Kiddie Diet Coke ($1.00)', 'description' => 'small sized soda', 'image' => 'dietcoke.jpeg'],
             ['name' => 'Kiddie Dr. Pepper ($1.00)', 'description' => 'small sized soda', 'image' => 'drpepper.jpeg'],
-            ['name' => 'Kiddie Barqs Root Beer ($1.00)', 'description' => 'small sized soda'],
+            ['name' => 'Kiddie Barqs Root Beer ($1.00)', 'description' => 'small sized soda', 'image' => 'barqsrootbeer.jpeg'],
             ['name' => 'Kiddie Sprite ($1.00)', 'description' => 'small sized soda'],
             ['name' => 'Dr. Pepper ($1.99)', 'description' => 'Large sized soda'],
             ['name' => 'Coca Cola($1.99)', 'description' => 'Large sized soda'],
