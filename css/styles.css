@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .topnav {
     overflow: hidden;
     background-color: #333;
@@ -136,5 +142,9 @@ body{
 
 
 img[src="https://www.google.com/images/cleardot.gif"] {
-  display: none;
+  display: none; /* Removes uncessary big white box */
+}
+
+#plate-contents {
+  color: white;
 }

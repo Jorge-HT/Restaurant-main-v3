@@ -1,0 +1,96 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    background: linear-gradient(90deg, rgb(35, 35, 34), #605f5f);
+    background-color: #000000;
+    border: 25px solid #131313;
+}
+
+/* Main Heading */
+h1 {
+    text-align: center;
+    font-size: 300px;
+    color: whitesmoke;
+    font-family: fantasy;
+    font-weight: bold;
+}
+
+/* Menu item styling */
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Image side styling */
+.imgside img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Text side styling */
+.imgtext {
+    margin-left: 20px;
+}
+
+/* Button styling for Add to Plate */
+.arrow-button {
+    margin-left: auto;
+    padding: 10px 20px;
+    background-color: #ff8800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-button::after {
+    content: '→';
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.arrow-button:hover {
+    background-color: #f67715;
+}
+
+/* Return to Main Page button */
+.return-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.return-button:hover {
+    background-color: #218838;
+}
+
+/* No results message */
+p {
+    color: whitesmoke;
+    font-family: fantasy;
+    font-size: 1em;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+/* Image button for non-relevant results */
+img[src="https://www.google.com/images/cleardot.gif"] {
+    display: none;
+}

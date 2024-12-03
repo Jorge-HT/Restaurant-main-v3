@@ -4,56 +4,11 @@
         <meta charset="UTF-8">
         <meta name="author" content="Kimberle Ramirez">
         <title>Search List</title>
-        <style>
-            /* Add CSS to control the size of the images */
-            .menu-item {
-                display: flex;
-                align-items: center;
-                margin-bottom: 20px;
-                border-bottom: 1px solid #ddd;
-                padding-bottom: 10px;
-            }
 
-            .imgside img {
-                width: 150px; /* Set the width of the image */
-                height: auto; /* Maintain aspect ratio */
-                object-fit: cover; /* Ensure the image is properly cropped if it's too large */
-            }
+        <!-- Link to external CSS for styling -->
+        <link rel="stylesheet" href="../css/StyleSearch.css">
 
-            .imgtext {
-                margin-left: 20px;
-            }
-
-            .arrow-button {
-                margin-left: auto;
-                padding: 10px 20px;
-                background-color: #007BFF;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-
-            .arrow-button:hover {
-                background-color: #0056b3;
-            }
-
-            .return-button {
-                display: inline-block;
-                margin-top: 20px;
-                padding: 10px 20px;
-                background-color: #28a745;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                text-decoration: none;
-                text-align: center;
-            }
-
-            .return-button:hover {
-                background-color: #218838;
-            }
-        </style>
+        
     </head>
     <body>
         <!-- Return to Main Page Button -->

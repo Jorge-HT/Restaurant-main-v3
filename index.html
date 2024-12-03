@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/styles.css">
         <title>Los Pollos Hermanos Menu</title>
-        
     </head>
     <body>
         <div id="google_translate_element"></div>
@@ -24,11 +23,12 @@
             <h1>When is my food ready?</h1>
             <div id="myBar" style="width: 0%; height: 30px; background-color: green;"></div>
             <button onclick="move()">Show Progress</button>
+            <div id="plate-contents"></div> <!-- Display contents of plate.txt here -->
         </div>
 
         <!-- Checkout Button -->
         <div id="checkout-section" style="margin-top: 20px;">
-            <button id="checkout-button" onclick="window.location.href='php/checkout.php'">Checkout</button>
+            <button id="checkout-button" onclick="checkOut()">Checkout</button>
             <p id="checkout-message" style="color: red; display: none;">You need to add at least one item to your plate before checking out.</p>
         </div>
 
@@ -68,17 +68,21 @@
             // Flag to toggle between menus
             let isMenu2 = false;
 
-            // Function to toggle between MenuContent and Menu2
+            // Function to toggle between MenuContent and Menu2 (Kiddie Menu)
             function toggleMenu() {
                 const button = document.getElementById("menu-toggle-btn");
+                const body = document.body;  // Target the body for adding/removing a class
+
                 if (isMenu2) {
                     loadComponent("menu-placeholder", "partials/menuContent.html");
                     isMenu2 = false;
                     button.innerText = "Switch to Kiddie Menu";
+                    body.classList.remove("kiddie-menu-active");  // Remove class when switching back
                 } else {
-                    loadComponent("menu-placeholder", "partials/Menu2.html");
+                    loadComponent("menu-placeholder", "partials/Menu2.html");  // Make sure 'Menu2.html' has the Kiddie menu
                     isMenu2 = true;
                     button.innerText = "Switch to Regular Menu";
+                    body.classList.add("kiddie-menu-active");  // Add class when switching to Kiddie Menu
                 }
             }
 
@@ -94,26 +98,30 @@
                 .then(response => response.json())
                 .then(data => {
                     // Update the plate section with the new plate contents
-                    document.getElementById("plate-progress").innerHTML = data.updatedPlate;
+                    document.getElementById("plate-contents").innerHTML = data.updatedPlate;
                 })
                 .catch(error => console.error('Error adding to plate:', error));
             }
 
             // Function to check if the user has added any items to their plate
             function checkOut() {
-                fetch('php/checkPlate.php')
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.itemsCount > 0) {
-                            // If there are items, redirect to checkout page
-                            window.location.href = 'checkout.php';
-                        } else {
-                            // If no items, show a message
-                            document.getElementById("checkout-message").style.display = 'block';
-                        }
-                    })
-                    .catch(error => console.error('Error checking plate:', error));
+                window.location.href = 'php/checkout.php';
             }
+
+            // Fetch and display contents of plate.txt
+            function loadPlateContents() {
+                fetch('php/plate.txt')
+                    .then(response => response.text())
+                    .then(data => {
+                        // Split the data into lines and join them with <br> for line breaks
+                        const formattedData = data.split('\n').join('<br>');
+                        document.getElementById("plate-contents").innerHTML = formattedData;
+                    })
+                    .catch(error => console.error('Error loading plate contents:', error));
+            }
+
+            // Call loadPlateContents on page load
+            loadPlateContents();
         </script>
         
         <script type="text/javascript">
@@ -127,7 +135,6 @@
             }
         </script>
         <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        
         
     </body>
 </html>

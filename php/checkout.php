@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 require '../vendor/autoload.php';
 
 // Read the current contents of the plate (the user's order)
-$file = __DIR__ . '/plate.txt'; // Ensure the correct path
+$file = __DIR__ . '/plate.txt'; // Ensure the correct path, in php folder
 
 // Check if the file exists and read it
 $orderItems = file_exists($file) ? file($file, FILE_IGNORE_NEW_LINES) : [];
@@ -85,6 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_order'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
+    <link rel="stylesheet" href="../css/StyleCheckout.css">
 </head>
     <body>
         <h1>Your Order</h1>
@@ -96,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_order'])) {
 
         <h2>Total: $<?php echo number_format($total, 2); ?></h2>
 
-        <!-- Email form -->
+        <!-- Email form :D -->
         <h3>Enter Your Email for Confirmation:</h3>
         <form action="checkout.php" method="POST">
             <label for="email">Email: </label>
