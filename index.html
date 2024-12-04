@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/styles.css"> <!-- Dfault style -->
         <title>Los Pollos Hermanos Menu</title>
     </head>
     <body>
@@ -19,24 +19,34 @@
         <button id="menu-toggle-btn" onclick="toggleMenu()">Switch to Kiddie Menu</button>
         
         <!-- Plate Progress -->
-        <div id="plateprog" style="padding: 0px; margin-top: 20px; background-color: #000000; border-top: 2px solid #000000;">
+        <div id="plateprog" style="padding: 0px; margin-top: 20px; background-color: #ff9100; border-top: 2px solid #000000;">
             <h1>When is my food ready?</h1>
             <div id="myBar" style="width: 0%; height: 30px; background-color: green;"></div>
             <button onclick="move()">Show Progress</button>
             <div id="plate-contents"></div> <!-- Display contents of plate.txt here -->
-        </div>
-
+        
         <!-- Checkout Button -->
         <div id="checkout-section" style="margin-top: 20px;">
             <button id="checkout-button" onclick="checkOut()">Checkout</button>
             <p id="checkout-message" style="color: red; display: none;">You need to add at least one item to your plate before checking out.</p>
         </div>
+        
+        <div id="about" style="padding: 20px; margin-top: 40px; background-color: #ff9100; border-top: 2px solid #000000;">
+            <h1>About Us</h1>
+            <p>Welcome to Los Pollos Hermanos! Inspired by "Breaking Bad", but the menu created by our lovely team, Kimberle, Jorge, and Andres.</p>
+            <p>We are infamous for cheap mexican food, the type of food that'll make you feel "danger knocking on the door".<br>
+                Instead of making meth in the lab we are cooking it up in the kitchen folks!!
+            </p>
+        <div id="contact" style="padding: 20px; margin-top: 40px; background-color: #ff9100; border-top: 2px solid #000000;">
+            <h1>Contact Us</h1>
+            <p>
+                Los Pollos Hermanos Food Service: (909)-XXX-XXXX<br>
+                Here's my special Attorney. Call: (505)-503-4455
+            </p>
+        </div>
+        </div>
+        </div>
 
-        <!-- About Us -->
-        <div id="about-placeholder"></div>
-
-        <!-- Contact -->
-        <div id="contact-placeholder"></div>
 
         <!-- External scripts -->
         <script src="js/progressBar.js" defer></script>
@@ -62,8 +72,8 @@
         
             // Initially load MenuContent and other sections
             loadComponent("menu-placeholder", "partials/menuContent.html");
-            loadComponent("about-placeholder", "partials/about.html");
-            loadComponent("contact-placeholder", "partials/contact.html");
+            //loadComponent("about-placeholder", "partials/about.html"); 
+            //loadComponent("contact-placeholder", "partials/contact.html");
 
             // Flag to toggle between menus
             let isMenu2 = false;

@@ -5,8 +5,8 @@ function move() {
         i = 1;
         var elem = document.getElementById("myBar");
         var width = 1;
-        var totalTime = 1500; //total time in seconds (25 minutes)
-        var interval = (totalTime * 100) / 100; //1500ms per step (this would fill it in 25 minutes)
+        var totalTime = 1500; // total time in seconds (25 minutes)
+        var interval = (totalTime * 10); // 1500ms per step (this would fill it in 25 minutes)
         var id = setInterval(frame, interval);
         function frame() {
             if (width >= 100) {
